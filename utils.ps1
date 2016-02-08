@@ -109,7 +109,8 @@ function DeployVmToMembers($vmName) {
 
 function DeployVm($location, $cloneName, $vm) {
     $vmView = $vm | Get-View
-    $dest_datastore_name = "ESXI1 CSC DS2 SG500"
+    #$dest_datastore_name = "ESXI1 CSC DS2 SG500"
+    $dest_datastore_name = "ESXImain CSC DS2"
     # Creates a new configuration spec object to be applied to the VM clone
     $cloneSpec = new-object VMware.Vim.VirtualMachineCloneSpec
     $cloneSpec.Snapshot = $vmView.Snapshot.CurrentSnapshot
