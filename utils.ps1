@@ -86,7 +86,7 @@ function DeployLab($memberFolder, $labName) {
     }
     foreach ($vm in $labVms) {
         If ($($vm | Get-View).snapshot -ne $null) {
-            DeployVM $memberNewLabFolder $vm.name $vm
+            DeployVM $memberNewLabFolder "$vm - $labName - $memberFolder" $vm
         } Else {
             Write-Host "Cannot clone VM '$($vm.name)' because it has no snapshot(s)."
             exit
