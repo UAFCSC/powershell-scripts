@@ -1,5 +1,5 @@
 # Arsh Chauhan
-# Last Edited: 11/14/2016
+# Last Edited: 11/20/2019
 # deleteVM.ps1: Delete a VM from subfolders of a given folder
 . .\utils.ps1
 
@@ -17,7 +17,7 @@ If ($MyInvocation.line.substring(0,2) -ne ". ") {
              try 
             {
                  Write-Host "Deleting $vm"
-                 Remove-VM -Confirm:$false -VM $vm
+                 Remove-VM -Confirm:$false -VM $vm -DeletePermanently
             }
              Catch
             {
